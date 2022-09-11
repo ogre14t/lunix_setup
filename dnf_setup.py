@@ -48,10 +48,33 @@ def zsh():
     z_file.write("alias upy='sudo dnf update && sudo dnf upgrade -y && sudo dnf autoremove'\n")
     z_file.close()
 
+#Install docker
+def docker():
+    os.system("dnf config-manager --add-repo=https://download.docker.com/linux/fedora/docker-ce.repo")
+    os.system("dnf install docker-ce --nobest -y")
+    os.system("systemctl start docker")
+    os.system("systemctl enable docker")
+    os.system("usermod -aG docker $USER")
+
+# Install kubernetes
+def k8s():
+    os.system("dnf install kubectl -y")
+    os.system("dnf install kubeadm -y")
+    os.system("dnf install kubelet -y")
+    os.system("dnf install kubernetes-cni -y")
+    os.system("dnf install kubernetes-client -y")
+    os.system("dnf install kubernetes-node -y")
+    os.system("dnf install kubernetes-master -y")
+    os.system("dnf install kubernetes -y")
+
+#Setup vim
 def vim():
-    v_file = open("~/.vimrc", "a+")
-    v_file.write("")
-    v_file.close()
+    #install vim-plug
+    os.system("curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
+    # copy .vimrc
+    os.system("cp ./vimrc ~/.vimrc")
+    #install vim plugins
+    os.system("vim +PlugInstall +qall")
 
 # main program
 def main():
@@ -72,7 +95,13 @@ def main():
         print ("Requirements file found, installing apps...")
         get_reqs()
     # Install oh my zsh and modify .zshrc
-    print ("Installing Oh my zsh...")
+    print ("Installing zsh...")
     zsh()
+    print ("Setting up vim...")
+    vim()
+    print ("Installing docker...")
+    docker()
+    print ("Setting up kubernetes...")
+    k8s()
     # Modify .vimrc
     # setup crontab
