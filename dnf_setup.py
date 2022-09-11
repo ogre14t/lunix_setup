@@ -42,6 +42,7 @@ def zsh():
     os.system("git clone https://github.com/ryanoasis/nerd-fonts.git")
     os.system("cd nerd-fonts && ./install.sh Noto")
     os.system("dnf install starship -y")
+    os.system("cp ./zshrc ~/.zshrc && cp ./starship.toml ~/.config/starship.toml")
     # os.system("curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh")
     z_file = open("~/.zshrc", "a+")
     z_file.write("alias upy='sudo dnf update && sudo dnf upgrade -y && sudo dnf autoremove'\n")
