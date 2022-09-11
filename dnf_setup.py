@@ -39,7 +39,10 @@ def get_reqs():
 # Install on my zsh and configure
 def zsh():
     os.system("dnf install zsh -y")
-    os.system("curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh")
+    os.system("git clone https://github.com/ryanoasis/nerd-fonts.git")
+    os.system("cd nerd-fonts && ./install.sh Noto")
+    os.system("dnf install starship -y")
+    # os.system("curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh")
     z_file = open("~/.zshrc", "a+")
     z_file.write("alias upy='sudo dnf update && sudo dnf upgrade -y && sudo dnf autoremove'\n")
     z_file.close()

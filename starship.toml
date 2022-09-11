@@ -1,0 +1,69 @@
+# Swap the prompt character
+[character]
+success_symbol = "[⮕ ](bold yellow) "
+error_symbol = "[✗ ](bold red) "
+
+# User
+[username]
+style_user = "yellow bold"
+style_root = "red bold"
+format = "👹 [$user]($style) "
+disabled = false
+show_always = true
+
+# Directory
+[directory]
+truncation_length = 3
+style = "bold cyan"
+read_only = "🔒"
+read_only_style = "red"
+format = "in 📂 [$path]($style)[$read_only]($read_only_style) "
+
+# Git
+[git_branch]
+symbol = "🌱 "
+truncation_length = 10
+truncation_symbol = ""
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_status]
+conflicted = "🏴‍☠"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑️"
+
+# Host OS
+[hostname]
+ssh_only = false
+style = "bold yellow"
+format =  "on 💻 [$hostname]($style) "
+trim_at = ".companyname.com"
+disabled = false
+
+# Python
+[python]
+symbol = "with 🐍 "
+style="bold cyan"
+pyenv_version_name = true
+
+# Time
+[time]
+disabled = false
+use_12hr = true
+style = "cyan"
+format = '[$time]($style) '
+time_format = "%a %D %I:%M %P"
+utc_time_offset = "local"
