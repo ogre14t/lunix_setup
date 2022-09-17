@@ -1,3 +1,23 @@
-git
-zsh
+gnome-tweaks
+calibre
+gimp
+inkscape
+libreoffice
+steam
+dnf-plugins-core
+brave-browser
+gnome-shell-extensions
+bitwarden
+virtualbox
+ansible
+timeshift
+discord
+slack
+signal-desktop
+synology-drive-client
+synology-drive-client-nautilus
+flameshot
+
+
+
 
