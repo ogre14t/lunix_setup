@@ -117,6 +117,7 @@ def vscode():
 
 # main program
 def main():
+    print("beginning setup")
     # Check if root
     check_if_root()
     # do update and upgrade
