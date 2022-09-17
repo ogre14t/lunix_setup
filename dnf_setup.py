@@ -162,3 +162,6 @@ def main():
     vscode()
     print ("Done!")
     # setup crontab
+
+if __name__ == "__main__":
+    main()
