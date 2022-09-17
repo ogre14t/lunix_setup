@@ -121,6 +121,7 @@ def main():
     # Check if root
     check_if_root()
     # do update and upgrade
+    print("updating and upgrading")
     os.system("dnf update && dnf upgrade -y")
     print ("Installing git...")
     os.system("dnf install git -y")
