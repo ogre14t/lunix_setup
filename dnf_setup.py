@@ -128,13 +128,6 @@ def main():
     # some base applications
     print ("Installing curl...")
     os.system("dnf install curl -y")
-    # check if there is a requirements file
-    print ("Checking for requirements.txt file...")
-    f = path.exists("requirements.txt")
-    # Do dnf installs from reqs doc
-    if (f):
-        print ("Requirements file found, installing apps...")
-        get_reqs()
     print("Installing rpmfusion...")
     rpmfusion()
     print("Installing media codecs...")
@@ -162,6 +155,13 @@ def main():
     print ("Installing VS-CODE...")
     vscode()
     print ("Done!")
+    # check if there is a requirements file
+    print ("Checking for requirements.txt file...")
+    f = path.exists("requirements.txt")
+    # Do dnf installs from reqs doc
+    if (f):
+        print ("Requirements file found, installing apps...")
+        get_reqs()
     # setup crontab
 
 if __name__ == "__main__":
