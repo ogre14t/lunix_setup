@@ -20,10 +20,10 @@ def check_if_root():
     is_root = input("Are you in root? [Y/n]")
     if (is_true(is_root)):
         print ("Your are root, continuing on...")
-        return False
+        return True
     else:
         print ("This should be run as root, please change to root access and rerun.")
-        return True
+        return False
 
 # # Get the requirements file
 def get_reqs():
